@@ -34,12 +34,12 @@ public class TC3_ImageInArrivals {
         ReusableMethods.waitAndClick(homepage.homeButton, 5);
 
 //5) Test whether the Home page has Three Arrivals only
+//6) The Home page must contain only three Arrivals
+
         JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
         jsexecutor.executeScript("window.scrollBy(0,1000)");
         int actualArrivals = homepage.threeArrivalOnly.size();
         int expectedArrivals = 3;
-
-//6) The Home page must contains only three Arrivals
         Assert.assertEquals(actualArrivals, expectedArrivals);
 
 //7) Now click the image in the Arrivals
