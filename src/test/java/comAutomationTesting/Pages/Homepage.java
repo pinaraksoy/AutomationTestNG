@@ -27,7 +27,7 @@ public class Homepage {
     @FindBy(xpath = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div")
     public List<WebElement> threeArrivalOnly;
 
-    @FindBy(xpath = "/img[@class='attachment-shop_catalog size-shop_catalog wp-post-image'][1]")
+    @FindBy(xpath = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div[1]//img")
     public WebElement image1;
 
     @FindBy(xpath = "//button[.='Add to basket']")
@@ -35,5 +35,9 @@ public class Homepage {
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/text()")
     public WebElement addedToBasketMessage;
+
+    @FindBy(xpath = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div[1]//h3")
+    public WebElement itemInImage1;
+
 
 }
