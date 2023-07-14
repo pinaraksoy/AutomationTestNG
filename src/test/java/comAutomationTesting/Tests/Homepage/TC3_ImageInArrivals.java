@@ -56,12 +56,7 @@ public class TC3_ImageInArrivals {
         assert homepage.addToBasketButton.isDisplayed();
 
 
-     //  homepage.addToBasketButton.click();
-       // String expectedAddedMessage = " “Selenium Ruby” has been added to your basket.";
-     //   String actualAddedMessage = homepage.addedToBasketMessage.getText();
-      //  Assert.assertEquals(actualAddedMessage, expectedAddedMessage);
-
-      //  Driver.closeDriver();
+        Driver.closeDriver();
 
     }
     }
