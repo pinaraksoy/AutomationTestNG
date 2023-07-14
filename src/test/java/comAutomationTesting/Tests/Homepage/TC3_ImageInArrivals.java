@@ -9,38 +9,55 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import javax.swing.*;
 
 public class TC3_ImageInArrivals {
-    @Test
-    public void imagesInArrivals() {
-
-        //Open the browser
-        Homepage homepage = new Homepage();
-
-//2) Enter the URL “http://practice.automationtesting.in/”
+    Homepage homepage = new Homepage();
+    JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+    @BeforeClass
+    public void setUp(){
+        //1) Open the browser
+        //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
 
-//3) Click on Shop Menu
+    }
+
+    //3) Click on Shop Menu
+    @Test(priority = 1)
+    public void ClickOnShopMenu(){
         ReusableMethods.clickWithJS(homepage.shopButton);
         Driver.getDriver().navigate().refresh();
-        ReusableMethods.waitAndClick(homepage.shopButton, 2);
-//4) Now click on Home menu button
+        ReusableMethods.waitAndClick(homepage.shopButton,2);
+    }
 
+    //4) Now click on Home menu button
+    @Test(priority = 2)
+    public void clickOnHomeMenuButton(){
         homepage.homeButton.click();
         Driver.getDriver().navigate().refresh();
-        ReusableMethods.waitAndClick(homepage.homeButton, 5);
+        ReusableMethods.waitAndClick(homepage.homeButton, 3);
+    }
 
-//5) Test whether the Home page has Three Arrivals only
-//6) The Home page must contain only three Arrivals
+    @Test(priority = 3)
+    public void ThreeArrivalOnly(){
 
-        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        //5) Test whether the Home page has Three Arrivals only
+        //6) The Home page must contain only three Arrivals
+
         jsexecutor.executeScript("window.scrollBy(0,1000)");
-        int actualArrivals = homepage.threeArrivalOnly.size();
+        int actualArrivals =homepage.threeArrivalOnly.size();
         int expectedArrivals = 3;
-        Assert.assertEquals(actualArrivals, expectedArrivals);
+        Assert.assertEquals(actualArrivals,expectedArrivals);
+
+    }
+
+    @Test(priority = 4)
+    public void imagesInArrivals() {
+
 
 //7) Now click the image in the Arrivals
         String imageText= homepage.itemInImage1.getText().toLowerCase();
@@ -54,9 +71,11 @@ public class TC3_ImageInArrivals {
 
         Assert.assertTrue(Driver.getDriver().getTitle().toLowerCase().contains(imageText));
         assert homepage.addToBasketButton.isDisplayed();
-
-
-        Driver.closeDriver();
-
     }
+
+    @AfterClass
+    public void tearDown(){
+        Driver.closeDriver();
+    }
+
     }

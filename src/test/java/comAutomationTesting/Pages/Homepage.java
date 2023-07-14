@@ -1,9 +1,12 @@
 package comAutomationTesting.Pages;
 
+import comAutomationTesting.utilities.ConfigurationReader;
 import comAutomationTesting.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -47,6 +50,13 @@ public class Homepage {
 
     @FindBy(xpath = "//span[@class='posted_in']/a")
     public WebElement categoryOfBook;
+
+    @FindBy(xpath = "//li[@class='reviews_tab']")
+    public  WebElement reviewsButton;
+
+    @FindBy(xpath = "//div[@id='comments']//p")
+    public WebElement reviewText;
+
 
 
 }
