@@ -22,15 +22,20 @@ public class TC1_ThreeSliderOnly {
         ReusableMethods.waitAndClick(homepage.shopButton,2);
 
         //4) Now click on Home menu button
-        Driver.getDriver().navigate().back();
+        homepage.homeButton.click();
+        Driver.getDriver().navigate().refresh();
+        ReusableMethods.waitAndClick(homepage.homeButton, 5);
 
         //5) Test whether the Home page has Three Sliders only
+        //6) The Home page must contain only three sliders
+
         int expectedSlidersNumber= 3;
         int actualSliderNumber= homepage.threeSlidersOnly.size();
 
         Assert.assertEquals(actualSliderNumber,expectedSlidersNumber);
 
-        //6) The Home page must contains only three sliders
+
+
         Driver.closeDriver();
 
 

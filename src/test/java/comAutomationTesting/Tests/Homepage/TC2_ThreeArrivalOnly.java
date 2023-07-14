@@ -31,12 +31,13 @@ public class TC2_ThreeArrivalOnly {
 
 
 //5) Test whether the Home page has Three Arrivals only
+//6) The Home page must contain only three Arrivals
         JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
         jsexecutor.executeScript("window.scrollBy(0,750)");
         int actualArrivals =homepage.threeArrivalOnly.size();
         int expectedArrivals = 3;
-//6) The Home page must contains only three Arrivals
         Assert.assertEquals(actualArrivals,expectedArrivals);
+
         Driver.closeDriver();
 
 
