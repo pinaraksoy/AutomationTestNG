@@ -81,11 +81,11 @@ public class TC5_Arrivals_Images_Reviews {
 
     }
 
-    /*
+
     @AfterClass
     public void tearDown(){
         Driver.closeDriver();
     }
-     */
+
 
 }

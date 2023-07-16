@@ -83,8 +83,6 @@ public class TC6_Arrivals_Images_AddToBasket {
         Assert.assertTrue(actualAddedMessage.contains(expectedAddedMessage));
 
         homepage.viewBasketButton.click();
-        String productName= homepage.productName.getText();
-        String price=homepage.productPrice.getText();
 
         Assert.assertEquals(homepage.productName.getText().toLowerCase(),imageText);
         Assert.assertTrue(homepage.productPrice.isDisplayed());

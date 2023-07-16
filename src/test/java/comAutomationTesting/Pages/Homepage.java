@@ -36,7 +36,7 @@ public class Homepage {
     @FindBy(xpath = "//button[.='Add to basket']")
     public WebElement addToBasketButton;
 
-    @FindBy(xpath = "//*[@id=\"content\"]/div[1]/text()")
+    @FindBy(xpath = "//div[@class='woocommerce-message']")
     public WebElement addedToBasketMessage;
 
     @FindBy(xpath = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div[1]//h3")
@@ -56,6 +56,18 @@ public class Homepage {
 
     @FindBy(xpath = "//div[@id='comments']//p")
     public WebElement reviewText;
+
+    @FindBy(xpath = "//a[.='View Basket']")
+    public WebElement viewBasketButton;
+
+    @FindBy(xpath = "//a[.='Selenium Ruby']")
+    public WebElement productName;
+
+    @FindBy(xpath = "//td[@class='product-price']/span")
+    public WebElement productPrice;
+
+    @FindBy(css = "input[title='Qty']")
+    public WebElement quantityOfBook;
 
 
 
