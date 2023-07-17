@@ -92,6 +92,7 @@ public class TC12_Arrivals_AddToBasketItemsAddBook {
 
         //15) Now click on Update Basket to reflect those changes
         homepage.updateBasketButton.click();
+
         //16) User has the feasibility to Update Basket at the time of check out.
         Assert.assertTrue(homepage.messageText.getText().contains("Basket updated."));
 
