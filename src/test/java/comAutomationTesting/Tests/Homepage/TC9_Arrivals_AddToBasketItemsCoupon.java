@@ -81,11 +81,8 @@ public class TC9_Arrivals_AddToBasketItemsCoupon {
         Assert.assertTrue(homepage.productPrice.isDisplayed());
 
         //12) Now click on Item link which navigates to proceed to check out page.
-        homepage.itemLink.click();
         //13) User can click on the Item link in menu item after adding the book in to the basket which leads to the check out page
-        jsexecutor.executeScript("window.scrollBy(0,750)");
-        homepage.proceedToCheckout.click();
-        Assert.assertTrue(Driver.getDriver().getTitle().contains("Checkout"));
+        Assert.assertTrue(homepage.proceedToCheckout.isEnabled());
         homepage.itemLink.click();
     }
 

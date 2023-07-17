@@ -6,6 +6,7 @@ import comAutomationTesting.utilities.Driver;
 import comAutomationTesting.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -82,12 +83,19 @@ public class TC13_Arrivals_CheckOutBookFinalPrice {
 
         //12) Now click on Item link which navigates to proceed to check out page.
         homepage.itemLink.click();
+        Assert.assertTrue(homepage.proceedToCheckout.isDisplayed());
 
         //13) Now User can find the Total price of the book in the Check out grid.
         Assert.assertTrue(homepage.totalPriceOfSelectedBook.isDisplayed());
 
         //14) User has the feasibility to find the total price of the books at  the time of check out
         Assert.assertTrue(homepage.finalTotalPrice.isDisplayed());
-
     }
+
+    @AfterClass
+    public void tearDown(){
+        Driver.closeDriver();
+    }
+
+
 }

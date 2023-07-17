@@ -110,4 +110,11 @@ public class Homepage {
     @FindBy(css = "input[value='Update Basket']")
     public WebElement updateBasketButton;
 
+    @FindBy(xpath = "(//td[@data-title='Total'])[1]/span")
+    public WebElement totalPriceOfSelectedBook;
+
+    @FindBy(xpath = "(//td[@data-title='Total'])[2]/strong/span")
+    public WebElement finalTotalPrice;
+
+
 }
