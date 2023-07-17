@@ -119,5 +119,66 @@ public class Homepage {
     @FindBy(xpath = "//td[@data-title='Subtotal']")
     public WebElement subtotalValue;
 
+    @FindBy(css = "div[class='woocommerce-billing-fields']")
+    public WebElement billingDetails;
+
+    @FindBy(css = "div[class='woocommerce-shipping-fields']")
+    public WebElement additionalInformation;
+
+    @FindBy(css = "table[class='shop_table woocommerce-checkout-review-order-table']")
+    public WebElement orderDetails;
+
+    @FindBy(css = "div[class='woocommerce-checkout-payment']")
+    public WebElement paymentGateway;
+
+    @FindBy(css = "input[id='billing_first_name']")
+    public WebElement inputFirstName;
+
+    @FindBy(css = "input[id='billing_last_name']")
+    public WebElement inputLastName ;
+
+    @FindBy(css = "input[id='billing_email']")
+    public WebElement inputEmailAddress ;
+
+    @FindBy(css = "input[id='billing_phone']")
+    public WebElement inputPhoneNumber ;
+
+    @FindBy(xpath = "//span[@class='select2-chosen']")
+    public WebElement inputCountry;
+
+    @FindBy(xpath = "//input[@id='s2id_autogen1_search']")
+    public WebElement searchCountryBox;
+
+    @FindBy(xpath = "//*[@id='billing_country']")
+    public WebElement dropdownCountry ;
+
+    @FindBy(css = "input[id='billing_address_1']")
+    public WebElement inputAddress ;
+
+    @FindBy(css = "input[id='billing_postcode']")
+    public WebElement inputPostCode ;
+
+    @FindBy(css = "input[id='billing_city']")
+    public WebElement inputTown ;
+
+    @FindBy(xpath = "//select[@id='billing_state']")
+    public WebElement dropdownProvince ;
+
+    @FindBy(css = "input[id='payment_method_bacs']")
+    public WebElement directBankRadioBtn ;
+
+    @FindBy(css = "input[id='payment_method_cod']")
+    public WebElement cashOnDeliveryRadioBtn;
+    @FindBy(css = "input[id='payment_method_cheque']")
+    public WebElement checkRadioBtn;
+
+    @FindBy(css = "input[id='payment_method_ppec_paypal']")
+    public WebElement payPalRadioBtn;
+
+    @FindBy(id = "place_order")
+    public WebElement placeOrderButton;
+
+    @FindBy(className = "showcoupon")
+    public WebElement addACouponLink;
 
 }
