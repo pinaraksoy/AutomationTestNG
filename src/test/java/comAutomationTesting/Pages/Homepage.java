@@ -116,5 +116,8 @@ public class Homepage {
     @FindBy(xpath = "(//td[@data-title='Total'])[2]/strong/span")
     public WebElement finalTotalPrice;
 
+    @FindBy(xpath = "//td[@data-title='Subtotal']")
+    public WebElement subtotalValue;
+
 
 }
