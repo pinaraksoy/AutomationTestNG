@@ -6,6 +6,7 @@ import comAutomationTesting.utilities.Driver;
 import comAutomationTesting.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -60,7 +61,7 @@ public class TC7_Arrivals_AddToBasketWithMoreBooks {
 
         homepage.addToBasketButton.click();
         String expectedAddedMessage = "“Selenium Ruby” has been added to your basket.";
-        String actualAddedMessage = homepage.addedToBasketMessage.getText();
+        String actualAddedMessage = homepage.messageText.getText();
         System.out.println("actualAddedMessage = " + actualAddedMessage);
         Assert.assertTrue(actualAddedMessage.contains(expectedAddedMessage));
 
@@ -84,9 +85,13 @@ public class TC7_Arrivals_AddToBasketWithMoreBooks {
 
         //15) Now it throws an error prompt like you must enter a value between 1 and 20
         String expectedErrorMessage= "you must enter a value between 1 and 20";
-        String actualErrorMessage= homepage.addedToBasketMessage.getText();
+        String actualErrorMessage= homepage.messageText.getText();
         System.out.println("actualErrorMessage = " + actualErrorMessage);
         Assert.assertTrue(actualErrorMessage.toLowerCase().contains(expectedErrorMessage));
         System.out.println("there is no stock limit ");
+    }
+    @AfterClass
+    public void tearDown(){
+        Driver.closeDriver();
     }
 }

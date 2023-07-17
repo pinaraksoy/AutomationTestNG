@@ -6,6 +6,7 @@ import comAutomationTesting.utilities.Driver;
 import comAutomationTesting.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -72,7 +73,7 @@ public class TC8_Arrivals_AddToBasketItems {
         //10) Click on the Add To Basket button which adds that book to your basket
         homepage.addToBasketButton.click();
         String expectedAddedMessage = "“Selenium Ruby” has been added to your basket.";
-        String actualAddedMessage = homepage.addedToBasketMessage.getText();
+        String actualAddedMessage = homepage.messageText.getText();
         System.out.println("actualAddedMessage = " + actualAddedMessage);
         Assert.assertTrue(actualAddedMessage.contains(expectedAddedMessage));
 
@@ -88,5 +89,9 @@ public class TC8_Arrivals_AddToBasketItems {
         homepage.proceedToCheckout.click();
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Checkout"));
         homepage.itemLink.click();
+    }
+    @AfterClass
+    public void tearDown(){
+        Driver.closeDriver();
     }
 }

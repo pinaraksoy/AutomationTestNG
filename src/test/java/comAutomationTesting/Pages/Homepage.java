@@ -37,7 +37,7 @@ public class Homepage {
     public WebElement addToBasketButton;
 
     @FindBy(xpath = "//div[@class='woocommerce-message']")
-    public WebElement addedToBasketMessage;
+    public WebElement messageText;
 
     @FindBy(xpath = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div[1]//h3")
     public WebElement itemInImage1;
@@ -106,5 +106,8 @@ public class Homepage {
 
     @FindBy(css = "a[class='pp_close']")
     public WebElement closeButton;
+
+    @FindBy(css = "input[value='Update Basket']")
+    public WebElement updateBasketButton;
 
 }

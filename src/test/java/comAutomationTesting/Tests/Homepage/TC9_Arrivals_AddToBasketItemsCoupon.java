@@ -6,6 +6,7 @@ import comAutomationTesting.utilities.Driver;
 import comAutomationTesting.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -70,7 +71,7 @@ public class TC9_Arrivals_AddToBasketItemsCoupon {
         //10) Click on the Add To Basket button which adds that book to your basket
         homepage.addToBasketButton.click();
         String expectedAddedMessage = "“Selenium Ruby” has been added to your basket.";
-        String actualAddedMessage = homepage.addedToBasketMessage.getText();
+        String actualAddedMessage = homepage.messageText.getText();
         System.out.println("actualAddedMessage = " + actualAddedMessage);
         Assert.assertTrue(actualAddedMessage.contains(expectedAddedMessage));
 
@@ -95,10 +96,14 @@ public class TC9_Arrivals_AddToBasketItemsCoupon {
 
         //15) User can able to apply coupon by entering ‘krishnasakinala’ in the coupon textbox which give 50rps off on the total price
          homepage.applyCouponButton.click();
-         Assert.assertEquals(homepage.addedToBasketMessage.getText(),"Coupon code applied successfully.");
+         Assert.assertEquals(homepage.messageText.getText(),"Coupon code applied successfully.");
          jsexecutor.executeScript("window.scrollBy(0,750)");
          System.out.println(homepage.freeCouponAmount.getText());
          Assert.assertTrue(homepage.freeCouponAmount.getText().equals("₹50.00"));
 
+    }
+    @AfterClass
+    public void tearDown(){
+        Driver.closeDriver();
     }
 }

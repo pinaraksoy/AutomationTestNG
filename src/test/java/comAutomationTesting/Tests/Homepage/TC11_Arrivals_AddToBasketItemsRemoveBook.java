@@ -6,6 +6,7 @@ import comAutomationTesting.utilities.Driver;
 import comAutomationTesting.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -71,7 +72,7 @@ public class TC11_Arrivals_AddToBasketItemsRemoveBook {
         //10) Click on the Add To Basket button which adds that book to your basket
         homepage.addToBasketButton.click();
         String expectedAddedMessage = "“Selenium Ruby” has been added to your basket.";
-        String actualAddedMessage = homepage.addedToBasketMessage.getText();
+        String actualAddedMessage = homepage.messageText.getText();
         System.out.println("actualAddedMessage = " + actualAddedMessage);
         Assert.assertTrue(actualAddedMessage.contains(expectedAddedMessage));
 
@@ -87,6 +88,10 @@ public class TC11_Arrivals_AddToBasketItemsRemoveBook {
        homepage.removeButton.click();
 
         //14) User has the feasibility to remove the book at the time of check out also
-        Assert.assertTrue(homepage.addedToBasketMessage.getText().contains("Selenium Ruby removed."));
+        Assert.assertTrue(homepage.messageText.getText().contains("Selenium Ruby removed."));
+    }
+    @AfterClass
+    public void tearDown(){
+        Driver.closeDriver();
     }
 }

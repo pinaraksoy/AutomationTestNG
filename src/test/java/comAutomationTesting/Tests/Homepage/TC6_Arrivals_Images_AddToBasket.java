@@ -78,7 +78,7 @@ public class TC6_Arrivals_Images_AddToBasket {
 
         homepage.addToBasketButton.click();
         String expectedAddedMessage = "“Selenium Ruby” has been added to your basket.";
-        String actualAddedMessage = homepage.addedToBasketMessage.getText();
+        String actualAddedMessage = homepage.messageText.getText();
         System.out.println("actualAddedMessage = " + actualAddedMessage);
         Assert.assertTrue(actualAddedMessage.contains(expectedAddedMessage));
 

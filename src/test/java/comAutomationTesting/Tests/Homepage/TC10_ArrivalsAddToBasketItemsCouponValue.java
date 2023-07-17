@@ -6,6 +6,7 @@ import comAutomationTesting.utilities.Driver;
 import comAutomationTesting.utilities.ReusableMethods;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -75,7 +76,7 @@ public class TC10_ArrivalsAddToBasketItemsCouponValue {
         homepage.addToBasketButton.click();
 
         String expectedAddedMessage = "“"+imageText+"” has been added to your basket.";
-        String actualAddedMessage = homepage.addedToBasketMessage.getText();
+        String actualAddedMessage = homepage.messageText.getText();
         System.out.println("actualAddedMessage = " + actualAddedMessage);
         Assert.assertTrue(actualAddedMessage.contains(expectedAddedMessage));
 
@@ -101,8 +102,10 @@ public class TC10_ArrivalsAddToBasketItemsCouponValue {
         homepage.inputCouponCode.sendKeys(ConfigurationReader.getProperty("coupon.code"));
         homepage.applyCouponButton.click();
         Assert.assertTrue(homepage.couponErrorMessage.getText().contains("The minimum spend for this coupon is ₹450.00."));
+    }
 
-
-
+    @AfterClass
+    public void tearDown(){
+        Driver.closeDriver();
     }
 }
