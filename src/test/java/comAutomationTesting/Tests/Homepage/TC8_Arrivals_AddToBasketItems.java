@@ -87,6 +87,6 @@ public class TC8_Arrivals_AddToBasketItems {
         jsexecutor.executeScript("window.scrollBy(0,750)");
         homepage.proceedToCheckout.click();
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Checkout"));
-
+        homepage.itemLink.click();
     }
 }

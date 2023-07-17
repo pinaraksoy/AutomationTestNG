@@ -42,6 +42,12 @@ public class Homepage {
     @FindBy(xpath = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div[1]//h3")
     public WebElement itemInImage1;
 
+    @FindBy(xpath = "//div[@class='themify_builder_sub_row clearfix gutter-default   sub_row_1-0-2']/div[3]//h3")
+    public WebElement itemInImage3;
+
+    @FindBy(xpath = "//img[@title='Mastering JavaScript']")
+    public WebElement image3LessThan450;
+
     @FindBy(css = "li[class='description_tab active']")
     public WebElement descriptionButton;
 
@@ -61,6 +67,9 @@ public class Homepage {
     public WebElement viewBasketButton;
 
     @FindBy(xpath = "//a[.='Selenium Ruby']")
+    public WebElement productNameImage1;
+
+    @FindBy(xpath = "//td[@data-title='Product']/a")
     public WebElement productName;
 
     @FindBy(xpath = "//td[@class='product-price']/span")
@@ -69,6 +78,33 @@ public class Homepage {
     @FindBy(css = "input[title='Qty']")
     public WebElement quantityOfBook;
 
+    @FindBy(className = "cartcontents")
+    public WebElement itemLink;
 
+    @FindBy(css = "a[class='checkout-button button alt wc-forward'")
+    public WebElement proceedToCheckout;
+
+    @FindBy(id = "coupon_code")
+    public WebElement inputCouponCode;
+
+    @FindBy(xpath = "//input[@value='Apply Coupon']")
+    public WebElement applyCouponButton;
+
+    @FindBy(xpath = "//td[@data-title='Coupon: krishnasakinala']/span")
+    public WebElement freeCouponAmount;
+
+    @FindBy(xpath = "//a[.='×']")
+    public WebElement removeButton;
+
+    @FindBy(xpath = "//a[@class='button wc-backward']")
+    public WebElement returnToShopButton;
+
+
+
+    @FindBy(xpath = "//ul[@class='woocommerce-error']/li")
+    public WebElement couponErrorMessage;
+
+    @FindBy(css = "a[class='pp_close']")
+    public WebElement closeButton;
 
 }

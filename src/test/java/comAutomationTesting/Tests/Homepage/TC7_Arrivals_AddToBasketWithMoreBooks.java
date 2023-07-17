@@ -21,21 +21,7 @@ public class TC7_Arrivals_AddToBasketWithMoreBooks {
 
     }
 
-    //3) Click on Shop Menu
-    @Test(priority = 1)
-    public void ClickOnShopMenu() {
-        ReusableMethods.clickWithJS(homepage.shopButton);
-        Driver.getDriver().navigate().refresh();
-        ReusableMethods.waitAndClick(homepage.shopButton, 2);
-    }
 
-    //4) Now click on Home menu button
-    @Test(priority = 2)
-    public void clickOnHomeMenuButton() {
-        homepage.homeButton.click();
-        Driver.getDriver().navigate().refresh();
-        ReusableMethods.waitAndClick(homepage.homeButton, 3);
-    }
 
     @Test(priority = 3)
     public void ThreeArrivalOnly() {
