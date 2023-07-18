@@ -14,32 +14,22 @@ public class TC8_Arrivals_AddToBasketItems {
     Homepage homepage = new Homepage();
     JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
     String imageText;
-    @BeforeClass
-    public void setUp() {
+    @Test
+    public void Arrivals_AddToBasketItems() {
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
 
-    }
-
-    //3) Click on Shop Menu
-    @Test(priority = 1)
-    public void ClickOnShopMenu() {
+        //3) Click on Shop Menu
         ReusableMethods.clickWithJS(homepage.shopButton);
         Driver.getDriver().navigate().refresh();
         ReusableMethods.waitAndClick(homepage.shopButton, 2);
-    }
 
-    //4) Now click on Home menu button
-    @Test(priority = 2)
-    public void clickOnHomeMenuButton() {
+        //4) Now click on Home menu button
+
         homepage.homeButton.click();
         Driver.getDriver().navigate().refresh();
         ReusableMethods.waitAndClick(homepage.homeButton, 3);
-    }
-
-    @Test(priority = 3)
-    public void ThreeArrivalOnly() {
 
         //5) Test whether the Home page has Three Arrivals only
         //6) The Home page must contain only three Arrivals
@@ -49,9 +39,6 @@ public class TC8_Arrivals_AddToBasketItems {
         int expectedArrivals = 3;
         Assert.assertEquals(actualArrivals, expectedArrivals);
 
-    }
-    @Test(priority = 4)
-    public void imagesInArrivals() {
         //7) Now click the image in the Arrivals
         imageText = homepage.itemInImage1.getText().toLowerCase();
         homepage.image1.click();
@@ -64,12 +51,7 @@ public class TC8_Arrivals_AddToBasketItems {
 
         Assert.assertTrue(Driver.getDriver().getTitle().toLowerCase().contains(imageText));
         assert homepage.addToBasketButton.isDisplayed();
-    }
 
-
-
-    @Test(priority = 5)
-    public void Arrivals_AddToBasketItems() {
         //10) Click on the Add To Basket button which adds that book to your basket
         homepage.addToBasketButton.click();
         String expectedAddedMessage = "“Selenium Ruby” has been added to your basket.";
@@ -86,9 +68,8 @@ public class TC8_Arrivals_AddToBasketItems {
         //13) User can click on the Item link in menu item after adding the book in to the basket which leads to the check out page
         Assert.assertTrue(homepage.proceedToCheckout.isEnabled());
         homepage.itemLink.click();
-    }
-    @AfterClass
-    public void tearDown(){
+
+   
         Driver.closeDriver();
     }
 }

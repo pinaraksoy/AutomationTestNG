@@ -143,11 +143,17 @@ public class Homepage {
     @FindBy(css = "input[id='billing_phone']")
     public WebElement inputPhoneNumber ;
 
-    @FindBy(xpath = "//span[@class='select2-chosen']")
+    @FindBy(xpath = "(//span[@class='select2-chosen'])[1]")
     public WebElement inputCountry;
+
+    @FindBy(xpath = "(//span[@class='select2-chosen'])[2]")
+    public WebElement inputProvince;
 
     @FindBy(xpath = "//input[@id='s2id_autogen1_search']")
     public WebElement searchCountryBox;
+
+    @FindBy(xpath = "//input[@id='s2id_autogen2_search']")
+    public WebElement searchProvinceBox;
 
     @FindBy(xpath = "//*[@id='billing_country']")
     public WebElement dropdownCountry ;

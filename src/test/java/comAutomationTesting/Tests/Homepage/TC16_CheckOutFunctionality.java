@@ -13,32 +13,21 @@ public class TC16_CheckOutFunctionality {
     Homepage homepage = new Homepage();
     JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
     String imageText;
-    @BeforeClass
-    public void setUp() {
+    @Test
+    public void CheckOutFunctionality() {
         //1) Open the browser
         //2) Enter the URL “http://practice.automationtesting.in/”
         Driver.getDriver().get(ConfigurationReader.getProperty("au_url"));
 
-    }
-
-    //3) Click on Shop Menu
-    @Test(priority = 1)
-    public void ClickOnShopMenu() {
+        //3) Click on Shop Menu
         ReusableMethods.clickWithJS(homepage.shopButton);
         Driver.getDriver().navigate().refresh();
         ReusableMethods.waitAndClick(homepage.shopButton, 2);
-    }
 
-    //4) Now click on Home menu button
-    @Test(priority = 2)
-    public void clickOnHomeMenuButton() {
+        //4) Now click on Home menu button
         homepage.homeButton.click();
         Driver.getDriver().navigate().refresh();
         ReusableMethods.waitAndClick(homepage.homeButton, 3);
-    }
-
-    @Test(priority = 3)
-    public void ThreeArrivalOnly() {
 
         //5) Test whether the Home page has Three Arrivals only
         //6) The Home page must contain only three Arrivals
@@ -47,27 +36,19 @@ public class TC16_CheckOutFunctionality {
         int actualArrivals = homepage.threeArrivalOnly.size();
         int expectedArrivals = 3;
         Assert.assertEquals(actualArrivals, expectedArrivals);
-    }
 
-    @Test(priority = 4)
-    public void imagesInArrivals() {
         //7) Now click the image in the Arrivals
         imageText = homepage.itemInImage1.getText().toLowerCase();
         homepage.image1.click();
         Driver.getDriver().navigate().refresh();
         ReusableMethods.waitAndClick(homepage.image1, 5);
 
-
         //8) Test whether it is navigating to next page where the user can add that book into his basket.
         //9) Image should be clickable and should navigate to next page where user can add that book to his basket
 
         Assert.assertTrue(Driver.getDriver().getTitle().toLowerCase().contains(imageText));
         assert homepage.addToBasketButton.isDisplayed();
-    }
 
-
-    @Test(priority = 5)
-    public void CheckOutTotalSubTotalCondition() {
         //10) Click on the Add To Basket button which adds that book to your basket
         homepage.addToBasketButton.click();
         String expectedAddedMessage = "“Selenium Ruby” has been added to your basket.";
@@ -95,9 +76,8 @@ public class TC16_CheckOutFunctionality {
 
         //15) Total
         System.out.println("Total Price= "+ homepage.finalTotalPrice.getText());
-    }
-    @Test(priority = 6)
-    public void CheckOutFunctionality() {
+
+
         //15) Now click on Proceed to Check out button which navigates to payment gateway page.
         jsexecutor.executeScript("window.scrollBy(0,250)");
         homepage.proceedToCheckout.click();
