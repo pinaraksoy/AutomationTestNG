@@ -43,6 +43,9 @@ public class LoginPage {
     @FindBy(xpath = "//form[@class='login']")
     public WebElement loginForm;
 
+    @FindBy(xpath = "//a[.='Dashboard']")
+    public WebElement dashboard;
+
 
 
 
