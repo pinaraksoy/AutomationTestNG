@@ -35,8 +35,6 @@ public class TC20_LoginWithIncorrectCredentials {
         //7) Proper error must be displayed(ie Invalid username) and prompt to enter login again
         Assert.assertTrue(loginPage.errorMessage.isDisplayed());
         Assert.assertTrue(loginPage.errorMessage.getText().contains("Error"));
-        Assert.assertTrue(loginPage.inputUsername.isDisplayed());
-        Assert.assertTrue(loginPage.inputPassword.isDisplayed());
-
+        Assert.assertTrue(loginPage.loginForm.isDisplayed());
     }
 }

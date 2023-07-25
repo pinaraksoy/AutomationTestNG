@@ -34,5 +34,6 @@ public class TC22_LoginWithEmptyUsernameValidPW {
         //7) Proper error must be displayed(ie Invalid username) and prompt to enter login again
         Assert.assertTrue(loginPage.errorMessage.isDisplayed());
         Assert.assertTrue(loginPage.errorMessage.getText().contains("Username is required."));
+        Assert.assertTrue(loginPage.loginForm.isDisplayed());
     }
 }

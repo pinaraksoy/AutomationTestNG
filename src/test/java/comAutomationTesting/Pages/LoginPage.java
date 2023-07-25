@@ -40,6 +40,8 @@ public class LoginPage {
     @FindBy(xpath = "//ul[@class='woocommerce-error']/li")
     public WebElement errorMessage;
 
+    @FindBy(xpath = "//form[@class='login']")
+    public WebElement loginForm;
 
 
 

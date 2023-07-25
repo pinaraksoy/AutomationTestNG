@@ -35,6 +35,6 @@ public class TC21_LoginWithCorrectUsernameEmptyPW  {
         //7) Proper error must be displayed(ie Invalid password) and prompt to enter login again
         Assert.assertTrue(loginPage.errorMessage.isDisplayed());
         Assert.assertTrue(loginPage.errorMessage.getText().contains("Password is required."));
-
+        Assert.assertTrue(loginPage.loginForm.isDisplayed());
     }
 }
