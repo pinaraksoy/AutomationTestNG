@@ -120,10 +120,10 @@ public class TC18_CheckOutPaymentGatewayPlaceOrder {
 
         //19) On clicking place-order button user completes the process where the page navigates to Order confirmation page
         //with order details,bank details,customer details and billing details.
-        homepage.orderThankyouMessage.isDisplayed();
+
         Assert.assertTrue(homepage.orderThankyouMessage.getText().contains("Thank you. Your order has been received."));
-        homepage.orderDetailTable.isDisplayed();
-        homepage.bankDetail.isDisplayed();
+        assert homepage.orderDetailTable.isDisplayed();
+        assert homepage.bankDetail.isDisplayed();
 
 
     }
