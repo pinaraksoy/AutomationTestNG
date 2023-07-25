@@ -37,6 +37,10 @@ public class LoginPage {
     @FindBy(xpath = "//div[@class='woocommerce-MyAccount-content']/p")
     public WebElement loginHelloMessage;
 
+    @FindBy(xpath = "//ul[@class='woocommerce-error']/li")
+    public WebElement errorMessage;
+
+
 
 
 
