@@ -187,4 +187,13 @@ public class Homepage {
     @FindBy(className = "showcoupon")
     public WebElement addACouponLink;
 
+    @FindBy(css = "p[class='woocommerce-thankyou-order-received']")
+    public WebElement orderThankyouMessage;
+
+    @FindBy(css = "table[class='shop_table order_details']")
+    public WebElement orderDetailTable;
+
+@FindBy(css = "h2[class='wc-bacs-bank-details-heading']")
+    public WebElement bankDetail;
+
 }
