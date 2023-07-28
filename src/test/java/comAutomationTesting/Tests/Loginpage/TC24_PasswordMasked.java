@@ -22,15 +22,18 @@ public class TC24_PasswordMasked {
         loginPage.myAccountButton.click();
 
         //4) Enter the password field with some characters.
-       loginPage.inputPassword.sendKeys("12345");
+        loginPage.inputPassword.sendKeys("12345");
         String inputPass= loginPage.inputPassword.getText();
         System.out.println("inputPass = " + inputPass);
+
 
         //5) The password field should display the characters in asterisks or bullets
         // such that the password is not visible on the screen
         boolean isBulletSignDisplayed = inputPass.matches("^\\**$") || inputPass.isEmpty();
         Assert.assertTrue(isBulletSignDisplayed, "Password field does not display bullets/asterisks.");
 
+        //second way
+        Assert.assertEquals(loginPage.inputPassword.getAttribute("type"),"password");
 
 
     }
