@@ -1,6 +1,6 @@
-package comAutomationTesting.Tests.Loginpage;
+package comAutomationTesting.Tests.MyAccountpage;
 
-import comAutomationTesting.Pages.LoginPage;
+import comAutomationTesting.Pages.MyAccountPage;
 import comAutomationTesting.utilities.ConfigurationReader;
 import comAutomationTesting.utilities.Driver;
 import org.testng.Assert;
@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class TC24_PasswordMasked {
     //24. Log-in -Password should be masked
-    LoginPage loginPage = new LoginPage();
+    MyAccountPage loginPage = new MyAccountPage();
 
     @Test
     public void passwordMasked() {

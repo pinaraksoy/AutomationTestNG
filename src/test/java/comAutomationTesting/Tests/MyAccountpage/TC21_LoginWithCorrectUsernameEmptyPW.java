@@ -1,7 +1,7 @@
-package comAutomationTesting.Tests.Loginpage;
+package comAutomationTesting.Tests.MyAccountpage;
 
 import com.github.javafaker.Faker;
-import comAutomationTesting.Pages.LoginPage;
+import comAutomationTesting.Pages.MyAccountPage;
 import comAutomationTesting.utilities.ConfigurationReader;
 import comAutomationTesting.utilities.Driver;
 import org.testng.Assert;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class TC21_LoginWithCorrectUsernameEmptyPW  {
     //21. Log-in with correct username and empty password
-    LoginPage loginPage = new LoginPage();
+    MyAccountPage loginPage = new MyAccountPage();
     Faker faker = new Faker();
 
     @Test
