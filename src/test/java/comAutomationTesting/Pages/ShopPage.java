@@ -32,6 +32,10 @@ public class ShopPage {
   @FindBy(xpath = "//nav[@class='woocommerce-breadcrumb']")
     public WebElement homeChosenProduct;
 
+  @FindBy(css = "select[name='orderby']")
+    public WebElement defaultSortingDropdown;
+
+
 
 
 
