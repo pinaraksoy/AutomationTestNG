@@ -20,19 +20,28 @@ public class TC32_FilterBypriceFunctionality {
 
         //3) Click on Shop Menu
        shopPage.shopButton.click();
-        Driver.getDriver().navigate().refresh();
+       Driver.getDriver().navigate().refresh();
        shopPage.shopButton.click();
 
         //4) Adjust the filter by price between 150 to 450 rps
-        Actions action=new Actions(Driver.getDriver());
-
-        action.dragAndDropBy(shopPage.filterRightButton,-29,0).perform();
-        ReusableMethods.waitFor(5);
+        shopPage.adjustPriceBySlider(150,450);
 
         //5) Now click on Filter button
         shopPage.filterButton.click();
 
         //6) User can view books only between 150 to 450 rps price
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("min_price=150&max_price=449"));
-    }
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("min_price=150&max_price=450"));
+
+
+
+
+
+
+
+
+
+
+
+
+        }
 }
