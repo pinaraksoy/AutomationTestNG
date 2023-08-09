@@ -46,6 +46,30 @@ public class ShopPage {
   @FindBy(xpath = "//span[@tabindex='0']")
   public WebElement rightSliderHandleIcon;
 
+  @FindBy(xpath = "(//span[.='Sale!']/..)[1]")
+  public WebElement saleProduct1;
+
+  @FindBy(xpath = "((//span[.='Sale!'])/../..)//a[2]")
+  public WebElement addToBasketBtnOfSaleProduct1;
+
+  @FindBy(xpath = "//a[@class='wpmenucart-contents']")
+  public WebElement menuItem;
+
+  @FindBy(xpath = "//p[@class='price']/del/span")
+  public WebElement oldPriceOfProduct1;
+
+    @FindBy(xpath = "//p[@class='price']/ins/span")
+    public WebElement actualPriceOfProduct1;
+
+    @FindBy(css = "a[title='View Basket']")
+    public WebElement viewBasket;
+
+    @FindBy(xpath = "(//span[.='Sale!']/..)[1]//ins/span")
+    public WebElement actualPriceOfProduct1inShopPage;
+
+    @FindBy(xpath = "")
+    public WebElement iframe;
+
     public void adjustPriceBySlider(int startPrice, int endPrice) {
         Actions move = new Actions(Driver.getDriver());
         move.click(leftSliderHandleIcon).build().perform();

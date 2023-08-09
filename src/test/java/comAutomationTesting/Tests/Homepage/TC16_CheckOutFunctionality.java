@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 public class TC16_CheckOutFunctionality {
     Homepage homepage = new Homepage();
-    JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+
     String imageText;
     @Test
     public void CheckOutFunctionality() {
